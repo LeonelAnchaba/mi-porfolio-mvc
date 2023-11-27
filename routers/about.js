@@ -4,8 +4,8 @@ const path = require("path")
 
 //const {index} = require("../controllers/mainController.js")
 
-router.get("/", (req,res) =>{
-    res.sendFile(path.join(__dirname, "../views/home.html"))
+router.get("/about", (req,res) =>{
+    res.sendFile(path.join(__dirname, "../views/about.html"))
 })
 
 module.exports = router;

@@ -9,10 +9,9 @@ app.listen(3000, () =>{
 app.use(express.static("public"))
 
 
-app.get("/", (req,res) =>{
-    res.sendFile(path.join(__dirname, "/views/home.html"))
-})
+const homeRouter = require("./routers/main")
+const aboutRouter = require("./routers/about")
 
-app.get("/about", (req,res) =>{
-    res.sendFile(path.join(__dirname, "/views/about.html"))
-})
+app.get("/", homeRouter);
+
+app.get("/about", aboutRouter)
