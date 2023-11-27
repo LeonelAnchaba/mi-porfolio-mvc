@@ -1,11 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path")
 
-//const {index} = require("../controllers/mainController.js")
 
-router.get("/about", (req,res) =>{
-    res.sendFile(path.join(__dirname, "../views/about.html"))
-})
+const {about} = require("../controllers/mainController.js")
+
+router.get("/about", about)
 
 module.exports = router;
